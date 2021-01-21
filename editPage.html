@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <title>Simple example - Editor.md examples</title>
+        <link rel="stylesheet" href="./js/qinjs/static/lib/editormd/css/style.css">
+        <link rel="stylesheet" href="./js/qinjs/static/lib/editormd/css/editormd.css">
+        <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="./css/qincss/common.css">
+        <link rel="stylesheet" href="./css/bootstrap.css">
+        <link rel="stylesheet" href="./js/qinjs/static/iconfont/iconfont.css">
+
+        <script src="./js/jquery.min.js"></script>
+        <scrpt src="./js/bootstrap.min.js"></script>
+        <scrpt src="./js/qinjs/common.js"></scrpt>
+        <scrpt src="./js/qinjs/canvas-particle.js"></scrpt>
+        <scrpt src="./js/qinjs/static/iconfont/iconfont.js"></scrpt>
+
+        <style>
+            #eBtn{
+                width: 12%;
+                margin: 25px auto;
+                padding-left: 32px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <!-- 头部 -->
+            <div class="navbar navbar-default navbar-fixed-top" style="background-color: #3ea1df;">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <span style="color: white;" class="navbar-brand">小青蛙博客</span>
+                        </div>
+                        <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a style="color: white; " href="./index.html"><span class="icon iconfont">&#xe600;</span>首页</a></li>
+                            <li><a style="color: white; " href="./sortBlog.html"><span class="icon iconfont">&#xe602;</span>标签分类</a></li>
+                            <li><a style="color: white;" href="./remark.html"><span class="icon iconfont">&#xe6b8;</span>留言板</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a style="color: white;" href="./editPage.html"><span class="icon iconfont">&#xe767;</span>发布博客</a></li>
+                            <li><a style="color: white;" href="./login.html"><span class="icon iconfont">&#xe603;</span>个人中心</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="layout" style="width: 85%; margin: 0 auto;">
+                <div id="test-editormd" style="margin-top: 75px;">
+                    <textarea style="background-image: none;" placeholder=" 我的博客日记~~~">
+
+                    </textarea>
+                </div>
+
+                <div id="eBtn">
+                    <button type="button" class="btn btn-info" style="margin-right: 10px;">提交</button>
+                    <button type="button" class="btn btn-info">重置</button>
+                </div>
+            </div>
+            <!-- 底部 -->
+            <footer id="main-footer" style="padding-top: 0; background-color: #3ea1df; color: white;">
+                <div id="footer-rights" style="padding-top: 24px; padding-bottom: 10px;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>Copyright  ©  2021 小青蛙 <a href="#" target="blank">Little DEMO</a> / All rights reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>        
+        </div>
+
+        <scrpt src="./js/jquery.min.js"></scrpt>
+        <script src="./js/qinjs/static/lib/editormd/editormd.min.js"></script>
+        <script type="text/javascript">
+			var testEditor;
+
+            $(function() {
+                testEditor = editormd("test-editormd", {
+                    width   : "90%",
+                    height  : 640,
+                    syncScrolling : "single",
+                    path    : "./js/qinjs/static/lib/editormd/lib/"
+                });
+                
+            });
+        </script>
+    </body>
+</html>
