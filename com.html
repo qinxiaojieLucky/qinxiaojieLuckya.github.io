@@ -53,45 +53,43 @@
         </div>
         <!-- 中间部分 -->
         <div id="global-wrapper">
-            <main id="">
-                <section class="pt pb-medium" id="comment">
-                    <h3>留言互动</h3>
-                    <img class="img" src="./images/liuyan.gif" alt="">
-                    <!-- 留言框 -->
-                    <div id="comment" class="container">
-                        <div id="comment_head">
-                            <textarea name="comment" id="enjoy" v-model="content" placeholder="欢迎留下您的评论，～～～～"></textarea>
-                            <div id="share">
-                                <div style="float: left;">输入你的昵称：<input v-model="name" id="pname" type="text"></div>
-                                <button style="float: left; margin-left: 15px; padding: 2px 2px 1px 2px; border: 0; border-radius: 5px; background-color: #12930b; color: white;" id="btn_put" @click="subComment">发表评论</button>
+            <div id="global-wrapper">
+                <main id="">
+                    <section class="pt pb-medium" id="comment">
+                        <h3>留言互动</h3>
+                        <!-- 留言框 -->
+                        <div id="comment" class="container">
+                            <!--  移动端导航条功能受到影响 -->
+                            <div id="comment_head">
+                                <textarea name="comment" id="enjoy" v-model="content" placeholder="欢迎留下您的评论，～～～～"></textarea>
+                                <div id="share">
+                                    <div style="float: left;">输入你的昵称：<input v-model="name" id="pname" type="text"></div>
+                                    <button style="float: left; margin-left: 15px; padding: 2px 2px 1px 2px; border: 0; border-radius: 5px; background-color: #12930b; color: white;" id="btn_put" @click="subComment">发表评论</button>
+                                </div>
+                            </div>
+                            <div style="margin-top: -25px;">共有{{sum}}条评论</div>
+                            <div id="footer">
+                                <div id="commentList" v-for="(item,index) in comment">
+                                    <div class="row" >
+                                        <div class="left_img">
+                                            <img :src="item.cimg" alt="">                        
+                                        </div>
+                                        <div class="left_content" >
+                                            <div>
+                                                <h4>
+                                                    <span>{{item.cname}}</span> 
+                                                    <span>{{item.cdate}}</span>
+                                                </h4>
+                                            </div>
+                                            <p>{{item.cContent}}</p>                        
+                                        </div>
+                                    </div>
+                                </div>           
                             </div>
                         </div>
-                        <div style="margin-top: -25px;">共有{{sum}}条评论</div>
-                        <div id="footer">
-                            <div id="commentList" v-for="(item,index) in comment">
-                                <div class="row" >
-                                    <div class="left_img">
-                                        <img :src="item.cimg" alt="">                        
-                                    </div>
-                                    <div class="left_content" >
-                                        <div>
-                                            <h4>
-                                                <span>{{item.cname}}</span> 
-                                                <span>{{item.cdate}}</span>
-                                            </h4>
-                                        </div>
-                                        <p>{{item.cContent}}</p>                        
-                                    </div>
-                                </div>
-                                <!-- <div class="right">
-                                    <i class="glyphicon glyphicon-thumbs-up"></i>
-                                    <i class="glyphicon glyphicon-edit"></i>
-                                </div> -->
-                            </div>           
-                        </div>
-                    </div>
-                </section>
-            </main>
+                    </section>
+                </main>
+            </div>
         </div>
         <!-- 底部 -->
         <footer id="main-footer" style="padding-top: 0; background-color: #3ea1df; color: white;">
